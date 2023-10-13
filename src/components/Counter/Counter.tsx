@@ -14,6 +14,7 @@ export const Counter = () => {
   }
   return (
     <div>
+      <p>Тескт для проверки шрифта</p>
       <p data-testid='value'>{value}</p>
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>

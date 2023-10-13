@@ -1,6 +1,12 @@
+@font-face {
+  font-family: YujiHentaiganaAkari;
+  src: url("/src/assets/fonts/YujiHentaiganaAkari-Regular.ttf");
+}
+
 p{
   color: gray;
   font-size: 25px;
+  font-family: YujiHentaiganaAkari, sans-serif;
 }
 
 button {

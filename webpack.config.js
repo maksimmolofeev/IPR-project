@@ -15,7 +15,8 @@ module.exports = (env) => {
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, 'public', 'index.html')
+                template: path.resolve(__dirname, 'public', 'index.html'),
+                favicon: path.resolve(__dirname, 'src', 'assets', 'favicon', 'icons8-favicon-100.png')
             })
         ],
         module: {
@@ -51,13 +52,25 @@ module.exports = (env) => {
                     use: ['@svgr/webpack'],
                 },
                 {
-                    test: /\.(png|jpe?g|gif)$/i,
+                    test: /\.(png|jpe?g|gif|woff)$/i,
                     use: [
                         {
                             loader: 'file-loader',
                         },
                     ],
                 },
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: '[name].[ext]',
+                                outputPath: 'fonts/'
+                            }
+                        }
+                    ]
+                }
             ],
         },
         resolve: {
