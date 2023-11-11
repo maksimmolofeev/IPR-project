@@ -60,7 +60,7 @@ module.exports = (env) => {
                     use: ['@svgr/webpack'],
                 },
                 {
-                    test: /\.(png|jpe?g|gif|woff)$/i,
+                    test: /\.(png|jpe?g|gif)$/i,
                     use: [
                         {
                             loader: 'file-loader',

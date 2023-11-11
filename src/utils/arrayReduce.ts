@@ -1,7 +1,7 @@
-export function arrayReduce<T, U> (
+export function arrayReduce<T> (
   array: T[],
-  reduceFunc: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U,
-  initialValue: U
-): U {
+  reduceFunc: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T,
+  initialValue: T
+): T {
   return array.reduce(reduceFunc, initialValue)
 }
