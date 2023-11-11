@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Counter.scss'
-// import Plus from '../../assets/icons/plus.svg'
-// import Minus from '../../assets/icons/minus.svg'
+import Plus from '../../assets/icons/plus.svg'
+import Minus from '../../assets/icons/minus.svg'
 
 export const Counter = () => {
   const [value, setValue] = useState(0)
@@ -16,8 +16,8 @@ export const Counter = () => {
     <div>
       <p>Тескт для проверки шрифта</p>
       <p data-testid='value'>{value}</p>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
+      <button onClick={increment}><Plus /></button>
+      <button onClick={decrement}><Minus /></button>
     </div>
   )
 }

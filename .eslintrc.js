@@ -30,6 +30,7 @@ module.exports = {
   ],
   rules: {
     'react/jsx-indent': [2, 2],
+    'max-len': ['error', { code: 100 }],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/array-type': 'error',
     '@typescript-eslint/no-explicit-any': ['warn', { ignoreRestArgs: true }],

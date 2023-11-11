@@ -1,12 +1,12 @@
 @font-face {
-  font-family: YujiHentaiganaAkari;
-  src: url("/src/assets/fonts/YujiHentaiganaAkari-Regular.ttf");
+  font-family: BahnschriftRegular;
+  src: url("/src/assets/fonts/BahnschriftRegular.woff2");
 }
 
 p{
   color: gray;
   font-size: 25px;
-  font-family: YujiHentaiganaAkari, sans-serif;
+  font-family: BahnschriftRegular, sans-serif;
 }
 
 button {

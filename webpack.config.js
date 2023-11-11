@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
 const webpack = require("webpack");
 
 
@@ -17,7 +19,13 @@ module.exports = (env) => {
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, 'public', 'index.html'),
                 favicon: path.resolve(__dirname, 'src', 'assets', 'favicon', 'icons8-favicon-100.png')
-            })
+            }),
+            new CopyWebpackPlugin({
+                patterns: [
+                    { from: 'src/assets/icons', to: 'icons' },
+                ]
+            }),
+            new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
         ],
         module: {
             rules: [
