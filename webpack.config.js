@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = (env) => {
@@ -25,7 +26,10 @@ module.exports = (env) => {
                     { from: 'src/assets/icons', to: 'icons' },
                 ]
             }),
-            new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+            new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+            new MiniCssExtractPlugin({
+                filename: 'css/name.[contenthash:8].css'
+            })
         ],
         module: {
             rules: [
@@ -43,7 +47,7 @@ module.exports = (env) => {
                     test: /\.s[ac]ss$/i,
                     use: [
                         // Creates `style` nodes from JS strings
-                        "style-loader",
+                        MiniCssExtractPlugin.loader,
                         // Translates CSS into CommonJS
                         "css-loader",
                         // Compiles Sass to CSS
