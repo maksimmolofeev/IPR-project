@@ -1,3 +1,4 @@
 module.exports = {
-    './src/*.{js,jsx,ts,tsx}': ['stylelint --fix', 'eslint --fix'],
+    './src/*.{js,jsx,ts,tsx}': ['eslint --fix'],
+    './src/*.scss': ['stylelint --fix'],
 };
